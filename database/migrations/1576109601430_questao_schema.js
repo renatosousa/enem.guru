@@ -7,8 +7,12 @@ class QuestaoSchema extends Schema {
   up () {
     this.create('questaos', (table) => {
       table.increments()
-      table.string('enunciado',240).notNullable()
-      table.string('alternativas')
+      table.string('ano')
+      table.string('area')
+      table.string('enunciado').notNullable()
+      table.string('imagem')
+      table.json('alternativas')
+      table.string('assunto')
       table.timestamps()
     })
   }

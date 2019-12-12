@@ -3,10 +3,39 @@
 <h1>{{titulo}}</h1>
 <form action="/questoes/adiciona" method="POST">
     {{ csrfField() }}
+    <div class="form-group">   
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ano
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                @each(ano in [2009,2010,2011,2012, 2013, 2014,2015,2016,2017,2018,2019,2020])
+                    <button class="dropdown-item" type="button">{{ano}}</button>
+                @endeach
+            </div>
+        </div>
+    </div>    
+    <div class="form-group">
+        <div class="dropdown"> 
+        <div class="dropdown-menu">
+            <span class="dropdown-item-text">Selecione a área do conhecimento</span>
+            <a class="dropdown-item" href="#">Linguagens</a>
+            <a class="dropdown-item" href="#">Humanas</a>
+            <a class="dropdown-item" href="#">Natureza</a>
+            <a class="dropdown-item" href="#">Matemática</a>
+        </div>
+        </div>
+    </div>
     <div class="form-group">
         <label> Enunciado </label> 
         <textarea name="enunciado" type="text" 
             class="form-control" placeholder="Enunciado">{{old('enunciado','')}}</textarea>
+            {{elIf('<span class="text-danger">$self</span>', getErrorFor('enunciado'), hasErrorFor('enunciado'))}}
+    </div>
+    <div class="form-group">
+        <label> Imagem </label> 
+        <textarea name="imagem" type="text" 
+            class="form-control" placeholder="Imagem">{{old('enunciado','')}}</textarea>
             {{elIf('<span class="text-danger">$self</span>', getErrorFor('enunciado'), hasErrorFor('enunciado'))}}
     </div>
     <button class="btn btn-primary" type="submit">Adicionar</button>
