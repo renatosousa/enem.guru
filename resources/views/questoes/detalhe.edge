@@ -1,0 +1,11 @@
+@layout('main')
+@section('content')
+
+@if(old('notification'))
+    <div class="alert alert-success">
+        {{old('notification')}}
+    </div>
+@endif
+<a href="/questoes/add">Adicionar Nova Questão</a>
+<h1>{{questao.enunciado}}</h1>
+@endsection

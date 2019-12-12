@@ -1,0 +1,9 @@
+@layout('main')
+@section('content')
+<h1>{{titulo}}</h1>
+<ul class="list-group">
+    @each(questao in questoes)
+        <li class="list-group-item"><a href="/questoes/{{questao.id}}">{{questao.enunciado }}</a></li>
+    @endeach
+</ul>
+@endsection
