@@ -16,7 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.get('/','QuestoesController.index')
 
 Route.get('/questoes/add', 'QuestoesController.add')
 

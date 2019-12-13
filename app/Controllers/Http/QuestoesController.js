@@ -5,6 +5,11 @@ const Questao = use('App/Models/Questao')
 const {validate} = use('Validator')
 
 class QuestoesController {
+
+    async index({view}){
+        return view.render('index')
+    }
+
     async add({view}){
         return view.render('questoes.add', {
             titulo: 'Adicinar Questão'

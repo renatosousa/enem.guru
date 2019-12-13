@@ -1,0 +1,45 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8"/>
+      <title>Adnis e Vue</title>
+      <meta name="csrf-token" content="{{csrfToken}}">
+
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+      <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+      {{ style('https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css') }}
+
+      <style>
+        
+
+      </style>
+    </head>
+    <body>
+
+    <div id="app">
+
+         @include('inc/navbar')
+        <div class="container">
+        
+        <div>
+          <h5 class="is-size-2" style="color: #220052;">
+          O que vc acha do <span style="color: #47b784;" >@{{message}}</span>?</h5>
+          <br>
+        </div>
+
+        <br><br>
+        
+      </div>
+
+    </div>
+    {{ script('js/app.js') }}
+    {{ script('https://code.jquery.com/jquery-3.3.1.slim.min.js') }}
+    {{ script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js') }}
+    {{ script('https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js') }}
+
+    </body>
+    </html>
